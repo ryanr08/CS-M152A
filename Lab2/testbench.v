@@ -71,14 +71,14 @@ module testbench_105138860;
 		#100;
         
 		// Add stimulus here
-		rst = 1;
+		rst = 1; 
 		#50
 		rst = 0;
 	end
 	
 	always begin
 		#10
-		clk_in = ~clk_in;
+		clk_in = ~clk_in;	// flip the clk_in value to simulate a system clock
 	end
       
 endmodule
