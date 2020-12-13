@@ -105,9 +105,9 @@ module vending_machine(
 			S17 <= 0000;
 			S18 <= 0000;
 			S19 <= 0000;
-			//counter <= 3'b000;
-			//digit_count <= 2'b00;
-			//door_was_open <= 0;
+			counter <= 3'b000;
+			digit_count <= 2'b00;
+			door_was_open <= 0;
 		end
 		else if (current_state == RE_LOAD) begin	// Set the number of items in each slot to 10
 			S0 <= 10;
@@ -216,7 +216,7 @@ module vending_machine(
 				else if (KEY_PRESS && digit_count == 2'b00) begin		// read the first digit in
 					digit1 = ITEM_CODE;
 					digit_count = 2'b01;
-					//counter <= 3'b000;
+					counter <= 3'b000;
 				end
 				else if (KEY_PRESS == 0 && digit_count == 2'b01)
 					digit_count = 2'b10;
